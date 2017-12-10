@@ -1,0 +1,20 @@
+<ion-content padding>
+  <div text-right>
+    <button ion-button icon-only clear color="light" large (click)="dismiss()">
+      <ion-icon item-end name="close"></ion-icon>
+    </button>
+  </div>
+  <br>
+  <br>
+  <br>
+  <p text-center *ngIf="!image">
+    <video id="video" width="200" height="200" autoplay class="profile-picture camera-photo"></video>
+    <canvas id="canvas" style="display:none;" width="200" height="200" class="profile-picture"></canvas>
+  </p>
+  <br>
+  <p text-center>
+    <button ion-button large round outline color="light" (click)="takePicture()" *ngIf="!image">Tirar Foto</button>
+  </p>
+  <br>
+  <br>
+</ion-content>

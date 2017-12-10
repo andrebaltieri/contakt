@@ -1,0 +1,106 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@import "../theme/variables";
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}
+
+.camera-photo {
+  border: 3px solid #fff;
+}
+
+page-login,
+page-upload-picture {
+  ion-list,
+  ion-item,
+  ion-content {
+    background-color: map-get($colors, primary) !important;
+    color: #fff !important;
+    p {
+      color: #fff !important;
+    }
+  }
+  ion-label,
+  ion-segment-button {
+    color: #fff !important;
+  }
+  *::-webkit-input-placeholder {
+    color: #abd9f4 !important;
+  }
+  *:-moz-placeholder {
+    color: #abd9f4 !important;
+  }
+  *:-ms-input-placeholder {
+    color: #abd9f4 !important;
+  }
+}
+
+page-signup,
+page-take-picture {
+  ion-list,
+  ion-item,
+  ion-content {
+    background-color: map-get($colors, secondary) !important;
+    color: #fff !important;
+    p {
+      color: #fff !important;
+    }
+  }
+  ion-label,
+  ion-segment-button {
+    color: #fff !important;
+  }
+  *::-webkit-input-placeholder {
+    color: #8ef2bb !important;
+  }
+  *:-moz-placeholder {
+    color: #8ef2bb !important;
+  }
+  *:-ms-input-placeholder {
+    color: #8ef2bb !important;
+  }
+}
+
+page-reset-password,
+page-crop-picture {
+  ion-list,
+  ion-item,
+  ion-content {
+    background-color: map-get($colors, danger) !important;
+    color: #fff !important;
+    p {
+      color: #fff !important;
+    }
+  }
+  ion-label,
+  ion-segment-button {
+    color: #fff !important;
+  }
+  *::-webkit-input-placeholder {
+    color: #ff988e !important;
+  }
+  *:-moz-placeholder {
+    color: #ff988e !important;
+  }
+  *:-ms-input-placeholder {
+    color: #ff988e !important;
+  }
+}
+
+video {
+  object-fit: cover;
+}

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="secondaryDark">
+    <ion-title>Nova Conta</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p text-center>
+    <img src="{{ image }}" alt="Contakt" class="profile-picture">
+  </p>
+  <br>
+  <ion-list no-lines>
+    <form [formGroup]="form">
+      <ion-item>
+        <ion-label stacked>E-mail</ion-label>
+        <ion-input type="email" placeholder="Endereço de E-mail" formControlName="email" (ionBlur)="updateImage()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input type="password" placeholder="Sua Senha" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item text-center>
+        <button ion-button block large round color="light" [disabled]="form.invalid" (click)="submit()">Cadastrar</button>
+      </ion-item>
+    </form>
+  </ion-list>
+  <button ion-button clear block color="light" (click)="goToLogin()">Voltar para o Login</button>
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Contakt
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMoreOptions()">
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-navbar color="primary">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Pesquisar"></ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-segment [(ngModel)]="list">
+      <ion-segment-button value="all">
+        Todos
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        Favoritos
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="list">
+    <ion-list no-lines *ngSwitchCase="'all'">
+      <ion-item text-center *ngIf="contacts.length == 0">
+        <h3>
+          <em>Nenhum contato cadastrado</em>
+        </h3>
+      </ion-item>
+      <contact-list-item *ngIf="contacts.length != 0"></contact-list-item>
+    </ion-list>
+  </div>
+
+  <div [ngSwitch]="list">
+    <ion-list no-lines *ngSwitchCase="'favorites'">
+      <contact-list-item></contact-list-item>
+    </ion-list>
+  </div>
+
+  <ion-fab right bottom>
+    <button ion-fab color="danger" (click)="goToContact()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title *ngIf="!contact">Novo Contato</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMoreOptions()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines>
+    <ion-item text-center>
+      <img src="{{ contact.picture }}" alt="Contact Name" class="profile-picture">
+      <br>
+      <button ion-button clear color="primary" (click)="showChangeImage()">Alterar Imagem</button>
+    </ion-item>
+    <ion-item-divider>Informações do Contato</ion-item-divider>
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input type="text" placeholder="Primeiro Nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Sobrenome</ion-label>
+      <ion-input type="text" placeholder="Segundo Nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Empresa</ion-label>
+      <ion-input type="text" placeholder="Empresa em que trabalha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Data de Nascimento</ion-label>
+      <ion-input type="date" placeholder="Data de Nascimento"></ion-input>
+    </ion-item>
+
+    <ion-item-divider>Telefones
+      <button ion-button icon-only item-end clear color="secondary" (click)="addPhone()">
+        <ion-icon item-end name="add"></ion-icon>
+      </button>
+    </ion-item-divider>
+    <ion-item *ngFor="let phone of contact.phones">
+      {{ phone }}
+      <button ion-button clear small icon-only item-end color="danger" (click)="removePhone(phone)">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-item>
+
+    <ion-item-divider>E-mails
+      <button ion-button icon-only item-end clear color="secondary" (click)="addEmail()">
+        <ion-icon item-end name="add"></ion-icon>
+      </button>
+    </ion-item-divider>
+    <ion-item *ngFor="let email of contact.emails">
+      {{ email }}
+      <button ion-button clear small icon-only item-end color="danger" (click)="removeEmail(email)">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-item>
+
+    <ion-item-divider>Endereços
+      <button ion-button icon-only item-end clear color="secondary" (click)="showAddressOptions()">
+        <ion-icon item-end name="add"></ion-icon>
+      </button>
+    </ion-item-divider>
+    <ion-item *ngFor="let address of contact.addresses">
+      {{ address.street }}
+      <button ion-button clear small icon-only item-end color="danger" (click)="removeAddress(address)">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button block large color="secondary" (click)="submit()">Salvar</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
