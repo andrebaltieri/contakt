@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title *ngIf="!contact">Novo Contato</ion-title>
+    <ion-title>{{ contact.firstName }} {{ contact.lastName }}</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="showMoreOptions()">
         <ion-icon name="more"></ion-icon>

@@ -46,7 +46,7 @@ export class HomePage {
 
   goToContact(contact: Contact) {
     if (!contact) {
-      contact = new Contact('Novo Contato', 'assets/imgs/user.png', [], [], []);
+      contact = new Contact('Novo', 'Contato', 'assets/imgs/user.png', [], [], []);
     }
 
     this.navCtrl.push(ContactPage, { contact: contact });
